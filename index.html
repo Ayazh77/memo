@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my lovely girl</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #FFC0CB;
+        }
+        #container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+            background-color: #FF1493;
+            color: #fff; /* Белый цвет текста кнопок */
+            border: none; /* Убираем границу */
+            border-radius: 5px; /* Закругляем углы */
+        }
+        button.clicked {
+            background-color: #FF69B4;
+        }
+        #response {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        #valentine-image {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>С днем влюбленных!</h1>
+        <p>Будешь ли ты моей валентинкой?</p>
+        <img src="https://i.pinimg.com/originals/33/02/0d/33020dd5120e476b7edb0192a79693fa.jpg" alt="Cute Picture">
+        <div class="buttons">
+             <button onclick="showResponse('yes')">Yes</button>
+            <button onclick="moveButton()">No</button>
+        </div>
+        <div id="response"></div>
+    </div>
+
+    <div id="valentine-image">
+    <img src="https://i.pinimg.com/originals/07/32/86/0732868bc9bc543cb3479037f345dacd.gif" alt="Valentine Image">
+    <div>Благодарю за ответ, любимая))</div>
+</div>
+    <script>
+        function showResponse(answer) {
+            if (answer === 'yes') {
+                document.getElementById('container').style.display = 'none';
+                document.getElementById('valentine-image').style.display = 'block';
+            }
+        }
+
+        function moveButton() {
+            var button = document.querySelector('.buttons button:last-child');
+            button.style.transition = "transform 0.3s ease-in-out";
+            button.style.transform = "translateX(-20px)";
+        }
+    </script>
+</body>
+</html>
